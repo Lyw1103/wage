@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gx.dao.SyseDao">
+
+    <resultMap type="com.gx.po.Syse" id="SyseMap">
+        <result property="attendanceid" column="attendanceid" jdbcType="INTEGER"/>
+        <result property="workerid" column="workerid" jdbcType="INTEGER"/>
+        <result property="sickleave" column="sickleave" jdbcType="VARCHAR"/>
+        <result property="thingsfake" column="thingsfake" jdbcType="VARCHAR"/>
+        <result property="usuallyovertime" column="usuallyovertime" jdbcType="VARCHAR"/>
+        <result property="weekly" column="weekly" jdbcType="VARCHAR"/>
+        <result property="overtimeonholidays" column="overtimeonholidays" jdbcType="VARCHAR"/>
+        <result property="latearrivals" column="latearrivals" jdbcType="VARCHAR"/>
+        <result property="earlyarrivals" column="earlyarrivals" jdbcType="VARCHAR"/>
+        <result property="absences" column="absences" jdbcType="VARCHAR"/>
+        <result property="travelallowanceday" column="travelallowanceday" jdbcType="VARCHAR"/>
+        <result property="attendancetime" column="attendancetime" jdbcType="TIMESTAMP"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+    </resultMap>
+    <resultMap id="attendanceVoMap" type="com.gx.vo.attendanceVo" extends="SyseMap">
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="workernumber" column="workernumber" jdbcType="VARCHAR"/>
+        <result property="card" column="card" jdbcType="VARCHAR"/>
+        <result property="post" column="post" jdbcType="VARCHAR"/>
+        <result property="department" column="department" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询指定行数据-->
+    <select id="tablepageList" resultMap="attendanceVoMap">
+        <!--MyBatis Bind计算分页开始索引-->
+        <bind name="startIndex" value="(page-1) * limit"/>
+        select
+        attendanceid, syse.workerid, name, workernumber, card, post, department, sickleave, thingsfake, usuallyovertime, weekly, overtimeonholidays, latearrivals, earlyarrivals, absences, travelallowanceday, attendancetime, state
+        from syse
+        INNER JOIN sysc ON syse.workerid = sysc.workerid
+        <where>
+            <if test="workernumber != null and workernumber != ''">
+                and workernumber = #{workernumber}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="department != null and department != ''">
+                and department = #{department}
+            </if>
+        </where>
+        ORDER BY attendanceid
+        LIMIT #{startIndex,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+    </select>
+    <!--统计数据总条数 for 分页筛选-->
+    <select id="counttablepage" resultType="java.lang.Integer">
+        select COUNT(1)
+        from syse
+        INNER JOIN sysc ON syse.workerid = sysc.workerid
+        <where>
+            <if test="workernumber != null and workernumber != ''">
+                and workernumber = #{workernumber}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="department != null and department != ''">
+                and department = #{department}
+            </if>
+        </where>
+    </select>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SyseMap">
+        select
+          attendanceid, sickleave, thingsfake, usuallyovertime, weekly, overtimeonholidays, latearrivals, earlyarrivals, absences, travelallowanceday, attendancetime, state
+        from syse
+        where attendanceid = #{attendanceid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SyseMap">
+        select
+          attendanceid, sickleave, thingsfake, usuallyovertime, weekly, overtimeonholidays, latearrivals, earlyarrivals, absences, travelallowanceday, attendancetime, state
+        from syse
+        <where>
+            <if test="attendanceid != null">
+                and attendanceid = #{attendanceid}
+            </if>
+            <if test="sickleave != null and sickleave != ''">
+                and sickleave = #{sickleave}
+            </if>
+            <if test="thingsfake != null and thingsfake != ''">
+                and thingsfake = #{thingsfake}
+            </if>
+            <if test="usuallyovertime != null and usuallyovertime != ''">
+                and usuallyovertime = #{usuallyovertime}
+            </if>
+            <if test="weekly != null and weekly != ''">
+                and weekly = #{weekly}
+            </if>
+            <if test="overtimeonholidays != null and overtimeonholidays != ''">
+                and overtimeonholidays = #{overtimeonholidays}
+            </if>
+            <if test="latearrivals != null and latearrivals != ''">
+                and latearrivals = #{latearrivals}
+            </if>
+            <if test="earlyarrivals != null and earlyarrivals != ''">
+                and earlyarrivals = #{earlyarrivals}
+            </if>
+            <if test="absences != null and absences != ''">
+                and absences = #{absences}
+            </if>
+            <if test="travelallowanceday != null and travelallowanceday != ''">
+                and travelallowanceday = #{travelallowanceday}
+            </if>
+            <if test="attendancetime != null">
+                and attendancetime = #{attendancetime}
+            </if>
+            <if test="state != null">
+                and state = #{state}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from syse
+        <where>
+            <if test="attendanceid != null">
+                and attendanceid = #{attendanceid}
+            </if>
+            <if test="sickleave != null and sickleave != ''">
+                and sickleave = #{sickleave}
+            </if>
+            <if test="thingsfake != null and thingsfake != ''">
+                and thingsfake = #{thingsfake}
+            </if>
+            <if test="usuallyovertime != null and usuallyovertime != ''">
+                and usuallyovertime = #{usuallyovertime}
+            </if>
+            <if test="weekly != null and weekly != ''">
+                and weekly = #{weekly}
+            </if>
+            <if test="overtimeonholidays != null and overtimeonholidays != ''">
+                and overtimeonholidays = #{overtimeonholidays}
+            </if>
+            <if test="latearrivals != null and latearrivals != ''">
+                and latearrivals = #{latearrivals}
+            </if>
+            <if test="earlyarrivals != null and earlyarrivals != ''">
+                and earlyarrivals = #{earlyarrivals}
+            </if>
+            <if test="absences != null and absences != ''">
+                and absences = #{absences}
+            </if>
+            <if test="travelallowanceday != null and travelallowanceday != ''">
+                and travelallowanceday = #{travelallowanceday}
+            </if>
+            <if test="attendancetime != null">
+                and attendancetime = #{attendancetime}
+            </if>
+            <if test="state != null">
+                and state = #{state}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="attendanceid" useGeneratedKeys="true">
+        insert into syse(workerid,sickleave, thingsfake, usuallyovertime, weekly, overtimeonholidays, latearrivals, earlyarrivals, absences, travelallowanceday, attendancetime, state)
+        values (#{workerid}, #{sickleave}, #{thingsfake}, #{usuallyovertime}, #{weekly}, #{overtimeonholidays}, #{latearrivals}, #{earlyarrivals}, #{absences}, #{travelallowanceday}, #{attendancetime}, #{state})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="attendanceid" useGeneratedKeys="true">
+        insert into syse(sickleave, thingsfake, usuallyovertime, weekly, overtimeonholidays, latearrivals, earlyarrivals, absences, travelallowanceday, attendancetime, state)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.sickleave}, #{entity.thingsfake}, #{entity.usuallyovertime}, #{entity.weekly}, #{entity.overtimeonholidays}, #{entity.latearrivals}, #{entity.earlyarrivals}, #{entity.absences}, #{entity.travelallowanceday}, #{entity.attendancetime}, #{entity.state})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="attendanceid" useGeneratedKeys="true">
+        insert into syse(sickleave, thingsfake, usuallyovertime, weekly, overtimeonholidays, latearrivals, earlyarrivals, absences, travelallowanceday, attendancetime, state)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.sickleave}, #{entity.thingsfake}, #{entity.usuallyovertime}, #{entity.weekly}, #{entity.overtimeonholidays}, #{entity.latearrivals}, #{entity.earlyarrivals}, #{entity.absences}, #{entity.travelallowanceday}, #{entity.attendancetime}, #{entity.state})
+        </foreach>
+        on duplicate key update
+        sickleave = values(sickleave),
+        thingsfake = values(thingsfake),
+        usuallyovertime = values(usuallyovertime),
+        weekly = values(weekly),
+        overtimeonholidays = values(overtimeonholidays),
+        latearrivals = values(latearrivals),
+        earlyarrivals = values(earlyarrivals),
+        absences = values(absences),
+        travelallowanceday = values(travelallowanceday),
+        attendancetime = values(attendancetime),
+        state = values(state)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update syse
+        <set>
+            <if test="sickleave != null and sickleave != ''">
+                sickleave = #{sickleave},
+            </if>
+            <if test="thingsfake != null and thingsfake != ''">
+                thingsfake = #{thingsfake},
+            </if>
+            <if test="usuallyovertime != null and usuallyovertime != ''">
+                usuallyovertime = #{usuallyovertime},
+            </if>
+            <if test="weekly != null and weekly != ''">
+                weekly = #{weekly},
+            </if>
+            <if test="overtimeonholidays != null and overtimeonholidays != ''">
+                overtimeonholidays = #{overtimeonholidays},
+            </if>
+            <if test="latearrivals != null and latearrivals != ''">
+                latearrivals = #{latearrivals},
+            </if>
+            <if test="earlyarrivals != null and earlyarrivals != ''">
+                earlyarrivals = #{earlyarrivals},
+            </if>
+            <if test="absences != null and absences != ''">
+                absences = #{absences},
+            </if>
+            <if test="travelallowanceday != null and travelallowanceday != ''">
+                travelallowanceday = #{travelallowanceday},
+            </if>
+            <if test="attendancetime != null">
+                attendancetime = #{attendancetime},
+            </if>
+            <if test="state != null">
+                state = #{state},
+            </if>
+        </set>
+        where attendanceid = #{attendanceid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from syse where attendanceid = #{attendanceid}
+    </delete>
+
+</mapper>
+

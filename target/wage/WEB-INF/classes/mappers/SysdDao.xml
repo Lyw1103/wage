@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gx.dao.SysdDao">
+
+    <resultMap type="com.gx.po.Sysd" id="SysdMap">
+        <result property="salaryitemid" column="salaryitemid" jdbcType="INTEGER"/>
+        <result property="latearrivalpenalty" column="latearrivalpenalty" jdbcType="VARCHAR"/>
+        <result property="earlyrefundpenalty" column="earlyrefundpenalty" jdbcType="VARCHAR"/>
+        <result property="travelallowance" column="travelallowance" jdbcType="VARCHAR"/>
+        <result property="attendanceaward" column="attendanceaward" jdbcType="VARCHAR"/>
+        <result property="foodandbeveragesubsidies" column="foodandbeveragesubsidies" jdbcType="VARCHAR"/>
+        <result property="transportationsubsidies" column="transportationsubsidies" jdbcType="VARCHAR"/>
+        <result property="overtimworkrates" column="overtimworkrates" jdbcType="VARCHAR"/>
+        <result property="weekendovertimerates" column="weekendovertimerates" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="queryd" resultMap="SysdMap">
+        select
+            salaryitemid, latearrivalpenalty, earlyrefundpenalty, travelallowance, attendanceaward, foodandbeveragesubsidies, transportationsubsidies, overtimworkrates, weekendovertimerates
+        from sysd
+    </select>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SysdMap">
+        select
+          salaryitemid, latearrivalpenalty, earlyrefundpenalty, travelallowance, attendanceaward, foodandbeveragesubsidies, transportationsubsidies, overtimworkrates, weekendovertimerates
+        from sysd
+        where salaryitemid = #{salaryitemid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SysdMap">
+        select
+          salaryitemid, latearrivalpenalty, earlyrefundpenalty, travelallowance, attendanceaward, foodandbeveragesubsidies, transportationsubsidies, overtimworkrates, weekendovertimerates
+        from sysd
+        <where>
+            <if test="salaryitemid != null">
+                and salaryitemid = #{salaryitemid}
+            </if>
+            <if test="latearrivalpenalty != null and latearrivalpenalty != ''">
+                and latearrivalpenalty = #{latearrivalpenalty}
+            </if>
+            <if test="earlyrefundpenalty != null and earlyrefundpenalty != ''">
+                and earlyrefundpenalty = #{earlyrefundpenalty}
+            </if>
+            <if test="travelallowance != null and travelallowance != ''">
+                and travelallowance = #{travelallowance}
+            </if>
+            <if test="attendanceaward != null and attendanceaward != ''">
+                and attendanceaward = #{attendanceaward}
+            </if>
+            <if test="foodandbeveragesubsidies != null and foodandbeveragesubsidies != ''">
+                and foodandbeveragesubsidies = #{foodandbeveragesubsidies}
+            </if>
+            <if test="transportationsubsidies != null and transportationsubsidies != ''">
+                and transportationsubsidies = #{transportationsubsidies}
+            </if>
+            <if test="overtimworkrates != null and overtimworkrates != ''">
+                and overtimworkrates = #{overtimworkrates}
+            </if>
+            <if test="weekendovertimerates != null and weekendovertimerates != ''">
+                and weekendovertimerates = #{weekendovertimerates}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from sysd
+        <where>
+            <if test="salaryitemid != null">
+                and salaryitemid = #{salaryitemid}
+            </if>
+            <if test="latearrivalpenalty != null and latearrivalpenalty != ''">
+                and latearrivalpenalty = #{latearrivalpenalty}
+            </if>
+            <if test="earlyrefundpenalty != null and earlyrefundpenalty != ''">
+                and earlyrefundpenalty = #{earlyrefundpenalty}
+            </if>
+            <if test="travelallowance != null and travelallowance != ''">
+                and travelallowance = #{travelallowance}
+            </if>
+            <if test="attendanceaward != null and attendanceaward != ''">
+                and attendanceaward = #{attendanceaward}
+            </if>
+            <if test="foodandbeveragesubsidies != null and foodandbeveragesubsidies != ''">
+                and foodandbeveragesubsidies = #{foodandbeveragesubsidies}
+            </if>
+            <if test="transportationsubsidies != null and transportationsubsidies != ''">
+                and transportationsubsidies = #{transportationsubsidies}
+            </if>
+            <if test="overtimworkrates != null and overtimworkrates != ''">
+                and overtimworkrates = #{overtimworkrates}
+            </if>
+            <if test="weekendovertimerates != null and weekendovertimerates != ''">
+                and weekendovertimerates = #{weekendovertimerates}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="salaryitemid" useGeneratedKeys="true">
+        insert into sysd(latearrivalpenalty, earlyrefundpenalty, travelallowance, attendanceaward, foodandbeveragesubsidies, transportationsubsidies, overtimworkrates, weekendovertimerates)
+        values (#{latearrivalpenalty}, #{earlyrefundpenalty}, #{travelallowance}, #{attendanceaward}, #{foodandbeveragesubsidies}, #{transportationsubsidies}, #{overtimworkrates}, #{weekendovertimerates})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="salaryitemid" useGeneratedKeys="true">
+        insert into sysd(latearrivalpenalty, earlyrefundpenalty, travelallowance, attendanceaward, foodandbeveragesubsidies, transportationsubsidies, overtimworkrates, weekendovertimerates)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.latearrivalpenalty}, #{entity.earlyrefundpenalty}, #{entity.travelallowance}, #{entity.attendanceaward}, #{entity.foodandbeveragesubsidies}, #{entity.transportationsubsidies}, #{entity.overtimworkrates}, #{entity.weekendovertimerates})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="salaryitemid" useGeneratedKeys="true">
+        insert into sysd(latearrivalpenalty, earlyrefundpenalty, travelallowance, attendanceaward, foodandbeveragesubsidies, transportationsubsidies, overtimworkrates, weekendovertimerates)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.latearrivalpenalty}, #{entity.earlyrefundpenalty}, #{entity.travelallowance}, #{entity.attendanceaward}, #{entity.foodandbeveragesubsidies}, #{entity.transportationsubsidies}, #{entity.overtimworkrates}, #{entity.weekendovertimerates})
+        </foreach>
+        on duplicate key update
+        latearrivalpenalty = values(latearrivalpenalty),
+        earlyrefundpenalty = values(earlyrefundpenalty),
+        travelallowance = values(travelallowance),
+        attendanceaward = values(attendanceaward),
+        foodandbeveragesubsidies = values(foodandbeveragesubsidies),
+        transportationsubsidies = values(transportationsubsidies),
+        overtimworkrates = values(overtimworkrates),
+        weekendovertimerates = values(weekendovertimerates)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update sysd
+        <set>
+            <if test="latearrivalpenalty != null and latearrivalpenalty != ''">
+                latearrivalpenalty = #{latearrivalpenalty},
+            </if>
+            <if test="earlyrefundpenalty != null and earlyrefundpenalty != ''">
+                earlyrefundpenalty = #{earlyrefundpenalty},
+            </if>
+            <if test="travelallowance != null and travelallowance != ''">
+                travelallowance = #{travelallowance},
+            </if>
+            <if test="attendanceaward != null and attendanceaward != ''">
+                attendanceaward = #{attendanceaward},
+            </if>
+            <if test="foodandbeveragesubsidies != null and foodandbeveragesubsidies != ''">
+                foodandbeveragesubsidies = #{foodandbeveragesubsidies},
+            </if>
+            <if test="transportationsubsidies != null and transportationsubsidies != ''">
+                transportationsubsidies = #{transportationsubsidies},
+            </if>
+            <if test="overtimworkrates != null and overtimworkrates != ''">
+                overtimworkrates = #{overtimworkrates},
+            </if>
+            <if test="weekendovertimerates != null and weekendovertimerates != ''">
+                weekendovertimerates = #{weekendovertimerates},
+            </if>
+        </set>
+        where salaryitemid = #{salaryitemid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from sysd where salaryitemid = #{salaryitemid}
+    </delete>
+
+</mapper>
+

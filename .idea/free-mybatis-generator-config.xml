@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistentConfig">
+    <option name="historyConfigList">
+      <map>
+        <entry key="sysa">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Sysa" />
+              <option name="modelPackage" value="com.gx.po" />
+              <option name="name" value="sysa" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="userid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="sysa" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="sysc">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Sysc" />
+              <option name="modelPackage" value="com.gx.po" />
+              <option name="name" value="sysc" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="workerid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="sysc" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="sysd">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Sysd" />
+              <option name="modelPackage" value="com.gx.po" />
+              <option name="name" value="sysd" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="salaryitemid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="sysd" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="syse">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Syse" />
+              <option name="modelPackage" value="com.gx.po" />
+              <option name="name" value="syse" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="attendanceid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="syse" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="sysf">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="" />
+              <option name="daoPackage" value="" />
+              <option name="daoPostfix" value="" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Sysf" />
+              <option name="modelPackage" value="com.gx.po" />
+              <option name="name" value="sysf" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="basesalaryid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="sysf" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="" />
+              <option name="xmlPackage" value="" />
+            </Config>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

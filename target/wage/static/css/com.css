@@ -1,0 +1,952 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.ul,li{
+	list-style: none;
+}
+.body{
+	width:1100px;
+	margin:0 auto; 
+}
+.header{
+	width: 1160px;
+	height: 35px;
+	background:#f8f8f8;
+	margin-left: -30px;
+}
+.header-A{
+	margin-left: 150px;
+	margin-top: 5px;
+}
+.header-B{
+	margin-right: 150px;
+	margin-top: 5px;
+}
+.header-B a{
+	font-size: 10px;
+	margin-right: 10px;
+	color: #333333;
+}
+.header-B span{
+	color: #D9D9D9;
+}
+.dianhua{
+	width: 20px;
+	height: 20px;
+	margin-bottom: -3px;
+}
+.fwrx{
+	font-size: 8px;	
+}
+.download{
+	font-size: 8px;	
+	color: #A4A4A4;
+	margin-left: 10px;
+}
+.header-logo ul li{
+	float:left;
+	margin-right: 28px;
+	margin-top: 30px;
+	
+}
+.header-logo ul li a image{
+	margin-left: 20px;
+}
+.on{
+	color: #c4000c;
+}
+
+
+.header-logo ul li a:active{
+	color: orange; /*鼠标点击时的颜色*/
+}
+
+.img1{
+	position: relative;
+	left: -50px;
+	top: 2px;
+}
+.img2{
+	position: relative;
+	left: -75px;
+	top: 2px;
+}
+.img3{
+	position: relative;
+	left: -102px;
+	top: 2px;
+}
+
+
+/*--------------------------轮播部分 开始------------------*/
+.container{
+	width: 1160px;
+	height: 320px;
+	/*background: #900;*/
+	position: relative;/*相对定位 相对自己进行定位*/
+	top:10px;
+	left: 472px;
+	margin-left: -500px;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 8;
+}
+.container .bd img{
+	display: block;
+	width: 1160px;
+	height: 320px;
+}
+.container .hd {
+	width: 200px;
+	height: 20px;
+/*	background: #900;*/
+	position: absolute;
+	bottom: 0;
+	left: 580px;
+	z-index: 10;
+}
+.container .hd ul li{
+	width: 30px;
+	height: 6px;
+	background: #666;
+	float: left;
+	margin-right: 5px;
+}
+.container .hd ul li.on{
+	background: #FFFFFF;
+}
+/*--------------------------轮播部分 结束------------------*/
+
+
+
+.shujutongji .tongji{
+	margin: 40px;
+	margin-left: 95px;
+}
+.shujutongji ul li{
+	float: left;
+}
+.shujutongji .tongji span{
+	position: absolute;
+	margin-left: 5px;
+	margin-top: 15px;
+	font-size: 25px;
+	color: #666666
+}
+.shujutongji .tongji  h5{
+	position:relative;
+	left: 65px;
+	color: #666666
+}
+
+
+.content-left{
+    width: 600px;
+	height: 300px;
+	background: #f8f8f8;
+	margin-top: 150px;
+	margin-left: 106px;
+}
+.xaio-box{
+	width:540px;
+	height: 2px;
+	background: #ebebeb;
+	margin-left: 25px;
+}
+.content-left span{
+	padding: 50px;
+	padding-top: 10px;
+}
+.big-box{
+	margin-top: 35px;
+}
+.A-A{
+	margin-left: 294px;
+	color: #ebebeb;
+}
+.ST{
+	margin-left: 52px;
+	width: 180px;
+	height: 25px;
+	background:#ffffff;
+	text-align: center;
+	margin-top: -25px;
+}
+
+
+
+
+
+.content-right{
+	float: right;
+	width: 300px;
+	height: 300px;
+    position: relative;
+	bottom: 295px;
+	left: -77px;
+}
+.content-right span a{
+	margin-left: 199px;
+}
+.xaio-box1{
+	width:300px;
+	height: 2px;
+	background: #ebebeb;
+	margin-top: 12px;
+}
+.big-box1{
+	margin-top: 25px;
+}
+
+
+
+
+
+
+
+.mid-A1{
+	width:920px;
+	height:80px;
+	background: #f8f8f8;
+	margin-left: 106px;
+}
+.mid-A1 span{
+	margin-left: 28px;
+	position: relative;
+	left: 90px;
+	top:33px;
+}
+.mid-A1  img{
+	margin-top: -17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.mid-B{
+	width: 920px;
+	height:330px;
+	margin-left: 106px;
+}
+.mid-box{
+	width: 50px;
+	height: 50px;
+	background: #1FCAAA;
+}
+.sp-box{
+	width: 120px;
+	height: 30px;
+	background: #0697da;
+	border-radius: 10px;
+	color: #ffffff;
+}
+.sp-boxA{
+	width: 150px;
+	height: 20px;
+	background: #e2e2e2;
+	border-radius: 10px;
+}
+.B1-box{
+	width:921px;
+	height: 2px;
+	background: #ebebeb;
+	margin-top: 45px;
+}
+.mid-B span{
+	margin: 25px;
+	position: relative;
+	top: 17px;
+}
+/*.style-none{*/
+/*	display: none;*/
+/*}*/
+
+
+
+.mid-A2{
+	width:920px;
+	height:80px;
+	background: #f8f8f8;
+	margin-left: 106px;
+}
+.mid-A2 span a{
+	margin-left: -140px;
+	position: relative;
+	top: -7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.co1-mid{
+    width: 800px;
+	height: 300px;
+}
+
+
+
+.xingye-changjian{
+	wdith:800px;
+	height: 2px;
+	background: #ebebeb;
+	margin-top: 15px;
+}
+.zhangxian{
+	width:915px;
+	height: 2px;
+	background: #ebebeb;
+	margin-top: 10px;
+	position: relative;
+	top: 460px;
+}
+.boliang{
+    color: #ebebeb;
+}
+
+
+.last-div{
+	width: 920px;
+    height: 80px;
+    background: #f8f8f8;
+}
+
+.title{
+	font-size: 25px;
+}
+.title1{
+	font-size: 20px;
+	margin-left: -173px;
+}
+.ddd{
+	margin-top: 260px;
+	margin-left: 108px;
+}
+.contentbox ul li{
+	margin-top: 30px;
+}
+.contentbox ul li span{
+	margin-left: 77px;
+}
+.last-left-right{
+	position: relative;
+	top: 95px;
+	left: 110px;
+}
+
+.dtbm1{
+	position: relative;
+	left: -130px;
+}
+.contentbox ul li img{
+	position: relative;
+	top: 4px;
+}
+.contentbox ul li a{
+	margin-left: 140px;
+}
+
+.last-left{
+	margin-top: 10px;
+}
+.last-left1 span{
+	margin-left: 7px;
+}
+.guanyu{
+	margin-left: -8px;
+}
+.youqing{
+	margin-top: 30px;
+	margin-left: -5px;
+}
+.photo-A{
+	position: relative;
+	left: -185px;
+}
+.last-div span img{
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+/*-----modal 模态样式 开始----*/
+.modal{
+	position: fixed;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 99;
+}
+.modal1{
+	position: fixed;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 99;
+}
+.modal-dialog{
+	width:700px;
+	height: 400px;
+	background:#fff;
+	margin: 120px auto 0;
+}
+.modal-mid{
+	width: 700px;
+	height: 318px;
+	background:rgba(251,251,251);
+}
+.modal-last{
+	position: relative;
+	top: 40px;
+	width: 532px;
+	height: 275px;
+	background: #fff;
+	margin-left: 82px;
+}
+.modal-last1{
+	position: relative;
+	top: 40px;
+	width: 280px;
+	height: 275px;
+	background: #fff;
+	margin-left: 20px;
+}
+.modal-header{
+	line-height: 30px;
+	padding: 10px;
+	overflow: hidden;/**/
+}
+.close{
+	width:26px;
+	height: 25px;
+	display: block;
+	background:url("../images/close.gif");
+}
+.modal-body{
+	width: 740px;
+	height: 300px;
+	background: #93939317;
+	margin-left: 282px;
+	margin-top: -14px;
+}
+.modal-body1{
+	width: 500px;
+	height: 280px;
+	background: #fff;
+	margin-left: 100px;
+	margin-top: 15px;
+}
+.form-group{
+	width:100%;
+	overflow: hidden;
+    margin-bottom: 20px;
+}
+.form-group lable{
+	width: 80px;
+    display: inline-block;
+    text-align: right;
+    color: #7a7a7a;
+    font-size: 12px;
+    font-weight: bolder;
+}
+select,
+input[type="date"],
+textarea
+{/*属性选择器*/
+	padding: 4px;
+	border:1px solid #eee;
+	background: #f6f8fa;
+	border-radius: 2px;
+	vertical-align: center;
+}
+.long{
+	width:280px;
+	box-sizing:border-box;
+}
+.form-group input[type="checkbox"]{
+	margin-left: 83px;
+	margin-top: 3px;
+}
+.btn-group{
+	margin: 20px 0 20px 84px;
+}
+.btn-group .submit{
+	width: 110px;
+    height: 33px;
+    border: none;
+	border-bottom: 3px solid #0068c4;
+	border-radius: 2px;
+	color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+	background-color: #057ee9;
+}
+
+
+.form-zhuce{
+	margin-left: 145px;
+	line-height: 38px;
+}
+
+
+/*-----modal 模态样式 结束----*/
+
+
+
+/*-----我要借款-借款标介绍 开始--------*/
+.jiekuan-title{
+	margin-left: 145px;
+	font-size: 20px;
+	margin-top: 18px;
+}
+.houselist .house{
+	width: 300px;
+    height: 350px;
+    position: relative;
+/*    margin-top: 20px;*/
+/*	background: #287C0A;*/
+	/*margin-left: 90px;*/
+	left: 110px;
+	top: 30px;
+	line-height: 33px;
+/*	border-right: 2px solid #DBDBDB;*/
+/*	border-top:  2px solid #DBDBDB;*/
+	
+}
+.houselist .house .biaotype{
+	position: relative;
+	top: 3px;
+}
+.houselist .house button{
+	border: none;
+	width: 128px;
+    height: 42px;
+    background-color: #009688;
+    position: relative;
+    top: 41px;
+    left: 96px;
+	color: #fff;
+}
+.houselist .house p{
+	margin-left: 30px;
+}
+
+/*-----我要借款-借款标介绍 结束--------*/
+
+
+
+/*<!--点击立即借款 如果没有实名认证会提示“你还没有实名认证”  如果没有申请额度就会提示“你还没有申请额度”  如果是实名认证和额度都有了，就会弹出模态窗体     模态窗体的开始-->*/
+.modal2{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+.modal2 .modal-contentA{
+	width: 830px;
+	height: 500px;
+	background: #fff;
+	border-color: #1119B5;
+	margin-left: 400px;
+	margin-top: 110px;
+}
+.modal2 .modal-contentB{
+	width: 830px;
+	height: 50px;
+	background: #337ab7;
+	border-color: #1119B5;
+	/* margin-left: 250px; */
+	line-height: 52px;
+	color: #FFF;
+}
+.modal2 .modal-contentA p{
+	line-height: 35px;
+	margin-left: 200px;
+}
+.modal2 .modal-contentA p input{
+	margin-left: 10px;
+}
+.modal2 .modal-contentA p button{
+	background: #337ab7;
+	border: none;
+	width: 65px;
+	height: 20px;
+	color: #fff;
+}
+.close1{
+	width:26px;
+	height: 26px;
+	display: block;
+	background:url("../images/close.gif");
+}
+
+/*<!--点击立即借款 如果没有实名认证会提示“你还没有实名认证”  如果没有申请额度就会提示“你还没有申请额度”  如果是实名认证和额度都有了，就会弹出模态窗体     模态窗体的结束-->*/
+
+
+
+/*我要投资开始*/
+
+.area_select {
+    width: 630px;
+    height: 200px;
+    /* background-color: aliceblue; */
+    overflow: hidden;
+}
+.content_two .contentboxLast {
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.contentboxLast {
+    width: 100%;
+}
+.area_select dl {
+    line-height: 30px;
+    padding: 5px 20px;
+    overflow: hidden;
+/*    border-bottom: 1px solid #eee;*/
+}
+.area_select dl dt a{
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 20px;
+    background: #0697da;
+    margin-right: 10px;
+	border-radius: 3px;
+}
+.area_select dl dt {
+    float: left;
+}
+.area_select dl dd {
+    font-size: 12px;
+    padding: 0 10px;
+}
+.area_select dl dd, .area_select dl dt {
+    float: left;
+}
+.area_select dl {
+    line-height: 30px;
+    padding: 5px 20px;
+    overflow: hidden;
+/*    border-bottom: 1px solid #eee;*/
+}
+.area_select dl dd a {
+    color: #666;
+}
+a {
+    text-decoration: none;
+}
+.dtbm-1 {
+    width: 300px;
+    height: 236px;
+    overflow: hidden;
+    /* background-color: antiquewhite; */
+	margin-left: -10px;
+}
+.contentboxLast ul li a{
+	line-height: 28px;
+	position: relative;
+	top: -10px;
+	left: -10px;
+}
+.dtbm-1 .title-1{
+	color:#199fd2;
+	margin-top: 19px;
+	
+}
+.content_two{
+	width: 930px;
+	height: 200px;
+	border: 1px solid #928E8E;	
+	margin-top: 20px;
+}
+/*我要投资结束*/
+
+
+
+/*投资理财项目开始*/
+.project-title{
+	margin-left: 92px;
+	margin-top: 25px;
+}
+
+.money-dabox{
+	width: 930px;
+	height: 660px;
+/*	background: #30CF52;*/
+	margin-left: 100px;
+	margin-top: 5px;
+	padding-top: 30px;
+	border: 3px solid #f5f5f5;
+}
+.xaiobo{
+	width: 900px;
+	height: 130px;
+/*	background: #2A8979;*/
+	margin-left: 14px;
+	margin-top: 5px;
+	border: 3px solid #f5f5f5;
+}
+.xiaobo-ul ul li span{
+	line-height: 55px;
+	margin: 60px;
+	margin-left: 75px;
+}
+.xiaobo-ul ul li button{
+	width: 110px;
+	height: 40px;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+}
+.xb-title{
+	margin-left: 76px;
+    position: relative;
+	top: 12px;
+}
+.xiaobo-ul ul li h{
+	color: #f0ad4e;
+}
+/*投资理财项目结束*/
+
+
+/*点击立即认购模态框开始*/
+.modal3{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+.modal3-content1{
+	width: 830px;
+    height: 300px;
+    border-color: #1119B5;
+    margin-left: 400px;
+	border: 3px solid #E1E1E1;
+    background: #fff;
+}
+.modal3-content1-1{
+	width: 560px;
+	height: 250px;
+/*	background: #D821BD;*/
+}
+.modal3-content1-2{
+	width: 270px;
+	height: 250px;
+/*	background: #FF9090;*/
+}
+.modal3-content2{
+	width: 830px;
+    height: 50px;
+    background: #f7f7f7;
+    border-color: #1119B5;
+    /* margin-left: 250px; */
+    line-height: 26px;
+    color: #FFF;
+}
+.modal3-content3{
+	width: 830px;
+    height: 310px;
+    border: 3px solid #E1E1E1;
+    background: #fff;
+    margin-left: 400px;
+/*    margin-top: 220px;*/
+}
+.modal3-content4{
+	width: 450px;
+    height: 310px;
+/*    background: #D20B0E;*/
+
+}
+.modal3-content5{
+	width: 380px;
+    height: 310px;
+/*    background: #BC9925;*/
+
+}
+/*
+.modal3 button{
+	position: relative;
+	left: 400px;
+}
+*/
+.modal3-dialog{
+	margin-top: 5px;
+	margin-left: -100px;
+}
+.modal3-content2 span{
+	margin-top: 10px;
+}
+.modal-box-ul ul li span{
+	line-height: 75px;
+	margin-left: 56px;
+}
+.btn{
+	margin-top: 5px;
+}
+.btn button{
+	background:#f7f7f7;
+	border: none;
+	width: 60px;
+	height: 20px;
+	font-size: 10px;
+}
+.modal3-content4-xb-title{
+	position: relative;
+	left: 55px;
+	top: 1px;
+}
+.modal3-content4-xiaobo-ul ul li{
+	line-height: 50px;
+	margin-left: 55px;
+}
+.modal3-content4-xiaobo-ul ul li h{
+	color: #b9b2a8;
+}
+.xiaobo-h h{
+	position: relative;
+	left: 33px;
+	top: 2px;
+}
+.layui-icon-username{
+	width: 50px;
+	height: 50px;
+	background: #EFEFEF;
+}
+.modal3-content5-xiaobo-ul ul li{
+	line-height: 20px;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+/*点击立即认购模态框结束*/
+
+
+
+/*我要购买开始*/
+.modal4{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+.modal4-dialog{
+	width: 420px;
+    height: 210px;
+    background: #fff;
+    margin: 120px auto 0;
+	border-radius: 5px;
+}
+.close4{
+	width:26px;
+	height: 25px;
+	display: block;
+	background:url("../images/close.gif");
+	margin-top: -28px;
+    position: relative;
+/*	left: 10px;*/
+}
+.modal4-header{
+	line-height: 30px;
+    padding: 10px;
+    overflow: hidden;
+	width: 400px;
+    height: 26px;
+    background: #337ab7;
+    border-color: #1119B5;
+    /* margin-left: 250px; */
+    color: #FFF;
+}
+.modal4-form-zhuce button{
+	width: 70px;
+	height: 30px;
+	background: #337ab7;
+	border: none;
+	border-radius: 5px;
+	position: relative;
+	left: 60px;
+	top: -15px;
+	margin-left: 9px;
+}
+/*我要购买结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gx.dao.SysfDao">
+
+    <resultMap type="com.gx.po.Sysf" id="SysfMap">
+        <result property="basesalaryid" column="basesalaryid" jdbcType="INTEGER"/>
+        <result property="basesalary" column="basesalary" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryd" resultMap="SysfMap">
+        select
+            basesalaryid, basesalary
+        from sysf
+    </select>
+
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SysfMap">
+        select
+          basesalaryid, basesalary
+        from sysf
+        where basesalaryid = #{basesalaryid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="tablepageList" resultMap="SysfMap">
+        <!--MyBatis Bind计算分页开始索引-->
+        <bind name="startIndex" value="(page-1) * limit"/>
+        select
+        basesalaryid, basesalary
+        from sysf
+        ORDER BY basesalaryid
+        LIMIT #{startIndex,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+    </select>
+    <!--统计数据总条数 for 分页筛选-->
+    <select id="counttablepage" resultType="java.lang.Integer">
+        select COUNT(1)
+        from sysf
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SysfMap">
+        select
+          basesalaryid, basesalary
+        from sysf
+        <where>
+            <if test="basesalaryid != null">
+                and basesalaryid = #{basesalaryid}
+            </if>
+            <if test="basesalary != null and basesalary != ''">
+                and basesalary = #{basesalary}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from sysf
+        <where>
+            <if test="basesalaryid != null">
+                and basesalaryid = #{basesalaryid}
+            </if>
+            <if test="basesalary != null and basesalary != ''">
+                and basesalary = #{basesalary}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="basesalaryid" useGeneratedKeys="true">
+        insert into sysf(basesalary)
+        values (#{basesalary})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="basesalaryid" useGeneratedKeys="true">
+        insert into sysf(basesalary)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.basesalary})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="basesalaryid" useGeneratedKeys="true">
+        insert into sysf(basesalary)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.basesalary})
+        </foreach>
+        on duplicate key update
+        basesalary = values(basesalary)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update sysf
+        <set>
+            <if test="basesalary != null and basesalary != ''">
+                basesalary = #{basesalary},
+            </if>
+        </set>
+        where basesalaryid = #{basesalaryid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from sysf where basesalaryid = #{basesalaryid}
+    </delete>
+
+</mapper>
+
